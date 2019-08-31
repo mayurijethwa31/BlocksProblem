@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl" class="container">
+        <div class="row">
+  <div class="col-md-8"><div>Number of blocks </div><input type="text" ng-model="numBlocks"></div><br>
+  <div class="col-md-8"><div>Moves</div><input type="text" ng-model="moves"></div><br>
+  <div class="col-md-8"><button type="button" class="btn btn-primary" ng-click="movesIteration()" class="btn btn-primary">ok</button></div>
+</div>
+  <div ng-if="displayNoOfBlocks">
+            Enter number of blocks removed for the first, second and third time:
+            <input type="text" ng-model="a">
+            <input type="text" ng-model="b">
+            <input type="text" ng-model="c">
+            <button type="button" class="btn btn-primary" ng-click="stackFormation(a,b,c)" class="btn btn-primary">submit</button>
+            <p>{{message}}</p>
+        </div>
+        <table>
+            <tr ng-repeat="x in displayStack">
+                <td>{{ x }}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="block.js">
+    </script>
+
+</body>
+
+</html>
